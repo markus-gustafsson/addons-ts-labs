@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 public class PuppyService {
-    private PuppyRepository puppyRepository;
+    private final PuppyRepository puppyRepository;
     @Autowired
     public PuppyService(PuppyRepository puppyRepository) {
         this.puppyRepository = puppyRepository;

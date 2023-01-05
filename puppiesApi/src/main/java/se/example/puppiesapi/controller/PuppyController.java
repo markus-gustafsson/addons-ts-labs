@@ -17,6 +17,7 @@ import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(path = "/api/puppies")
 public class PuppyController {
     private PuppyService puppyService;
