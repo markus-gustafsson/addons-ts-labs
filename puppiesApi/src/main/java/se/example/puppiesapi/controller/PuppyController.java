@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+import se.example.puppiesapi.model.dto.NewPuppyDTO;
 import se.example.puppiesapi.model.dto.PuppyDTO;
 import se.example.puppiesapi.service.PuppyService;
 
@@ -44,16 +45,16 @@ public class PuppyController {
     }
 
     @PostMapping(produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<PuppyDTO> createNew(@RequestBody PuppyDTO puppyDTO) {
-        PuppyDTO savedPuppyDTO = puppyService.createNew(puppyDTO);
+    public ResponseEntity<PuppyDTO> createNew(@RequestBody NewPuppyDTO newPuppyDTO) {
+        PuppyDTO savedPuppyDTO = puppyService.createNew(newPuppyDTO);
         URI location = URI.create("/api/puppies/" + savedPuppyDTO.id());
         return ResponseEntity.created(location).body(savedPuppyDTO);
     }
 
     @PutMapping(path = "/{id}", produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<PuppyDTO> update(@PathVariable Long id, @RequestBody PuppyDTO puppyDTO) {
+    public ResponseEntity<PuppyDTO> update(@PathVariable Long id, @RequestBody NewPuppyDTO newPuppyDTO) {
         try {
-            PuppyDTO updatedPuppyDTO = puppyService.update(id, puppyDTO);
+            PuppyDTO updatedPuppyDTO = puppyService.update(id, newPuppyDTO);
             return ResponseEntity.accepted().body(updatedPuppyDTO);
         } catch (NoSuchElementException e) {
             throw new ResponseStatusException(NOT_FOUND, e.getMessage());

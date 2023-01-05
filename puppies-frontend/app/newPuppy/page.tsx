@@ -39,36 +39,36 @@ function NewPuppyPage() {
   }
 
   return (
-    <div className={`flex flex-col items-center w-screen h-screen bg-gray-800`}>
+    <div className={`flex flex-col items-center w-screen h-screen bg-stone-50`}>
       <Header/>
-      <p className={`text-sky-100 text-xl font-bold`}>Enter details for new puppy below:</p>
+      <p className={`text-stone-900 text-xl font-bold`}>Enter details for new puppy below:</p>
       <form onSubmit={handleSubmit} className={`flex flex-col items-center`} encType={'application/json'}>
         <input
           type="text"
           value={puppy.name}
           onChange={handleNameChange}
-          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md`}
-          placeholder={"name..."}
+          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md bg-stone-100`}
+          placeholder={"Name"}
         />
         <input
           type="text"
           value={puppy.breed}
           onChange={handleBreedChange}
-          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md`}
-          placeholder={"breed..."}
+          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md rounded-md bg-stone-100`}
+          placeholder={"Breed"}
         />
         <input
           type="text"
           value={puppy.birthDate}
           onChange={handleBirthDateChange}
-          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md`}
-          placeholder={"birth date e.g. 2022-01-01..."}
+          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md rounded-md bg-stone-100`}
+          placeholder={"Birth date (YYYY-MM-DD)"}
         />
         <button
           type={"submit"}
-          className={`bg-sky-400 text-3xl pb-2 pt-2 pr-5 pl-5 rounded-xl hover:bg-sky-300`}
+          className={`bg-sky-200 text-3xl pb-2 pt-2 pr-5 pl-5 m-5 rounded-md hover:bg-sky-100`}
         >
-          Submit
+          Save
         </button>
       </form>
     </div>

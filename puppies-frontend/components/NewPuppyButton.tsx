@@ -4,11 +4,9 @@ import Link from "next/link";
 function NewPuppyButton() {
   return (
     <Link href={`/newPuppy`}>
-      <div className={`flex flex-row border-none w-fit h-12 items-center text-sky-100 -mt-6 hover:text-sky-300`}>
-        <span>
-          <span className={`text-5xl`}>+</span><span className={`text-xs`}>add new pup</span>
-        </span>
-      </div>
+      <button className={`p-3 rounded-md bg-sky-200 hover:bg-sky-100 drop-shadow-sm mb-3 self-start text-stone-900`}>
+        new pup
+      </button>
     </Link>
   );
 }

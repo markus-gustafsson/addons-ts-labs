@@ -12,16 +12,26 @@ const getPuppies = async () => {
 const Home = async () => {
   const puppies: IPuppyInfo[] = await getPuppies();
   return (
-    <div className={`flex flex-col h-screen items-center bg-gray-800`}>
+    <div className={`flex flex-col h-screen items-center bg-stone-50`}>
       <Header/>
-      <NewPuppyButton />
-      <ul>
-        {puppies.map((puppy: IPuppyInfo) => (
-          <li key={puppy.id}>
-            <PuppyListItem id={puppy.id} breed={puppy.breed} name={puppy.name} birthDate={puppy.birthDate}/>
-          </li>
-        ))}
-      </ul>
+      {
+        puppies.length > 0 ?
+          <>
+            <NewPuppyButton/>
+            <ul>
+              {puppies.map((puppy: IPuppyInfo) => (
+                <li key={puppy.id}>
+                  <PuppyListItem id={puppy.id} breed={puppy.breed} name={puppy.name} birthDate={puppy.birthDate}/>
+                </li>
+              ))}
+            </ul>
+          </>
+          :
+          <>
+            <h2>Seems like we don't have any puppies, try adding one:</h2>
+            {/*<NewPuppyButton/>*/}
+          </>
+      }
     </div>
   );
 };

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import se.example.puppiesapi.model.Puppy;
+import se.example.puppiesapi.model.dto.NewPuppyDTO;
 import se.example.puppiesapi.model.dto.PuppyDTO;
 import se.example.puppiesapi.repository.JPAPuppyRepository;
 import se.example.puppiesapi.repository.PuppyRepository;
@@ -63,11 +64,10 @@ class PuppyServiceTest {
     @Test
     void createNew() {
         when(puppyRepositoryMock.save(any(Puppy.class))).thenReturn(puppy1);
-        PuppyDTO puppyDTO = new PuppyDTO(
-                100L,
+        NewPuppyDTO puppyDTO = new NewPuppyDTO(
                 "Doge",
                 "Coin",
-                LocalDateTime.now()
+                "2020-01-01"
         );
         PuppyDTO created = puppyService.createNew(puppyDTO);
         assertEquals(puppy1.getName(), created.name());

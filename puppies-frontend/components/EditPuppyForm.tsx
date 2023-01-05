@@ -39,12 +39,13 @@ function EditPuppyForm(props: IPuppyInfo) {
 
   return (
     <>
-      <p className={`mt-2`}>Something wrong? Edit the puppy here:</p>
-      <form onSubmit={handleSubmit} className={`border-2`} encType={'application/json'}>
+      <p className={`mt-5 font-bold`}>Something wrong? Edit the puppy here:</p>
+      <form onSubmit={handleSubmit} className={`flex flex-col items-center`} encType={'application/json'}>
         <input
           type="text"
           value={puppy.name}
           onChange={handleNameChange}
+          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md bg-stone-100`}
           // className={"article-form__title-input"}
           placeholder={puppy.name}
         />
@@ -52,6 +53,8 @@ function EditPuppyForm(props: IPuppyInfo) {
           type="text"
           value={puppy.breed}
           onChange={handleBreedChange}
+          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md rounded-md bg-stone-100`}
+
           // className={"article-form__title-input"}
           placeholder={puppy.breed}
         />
@@ -59,10 +62,15 @@ function EditPuppyForm(props: IPuppyInfo) {
           type="text"
           value={puppy.birthDate}
           onChange={handleBirthDateChange}
+          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md rounded-md bg-stone-100`}
+
           // className={"article-form__title-input"}
           placeholder={puppy.birthDate}
         />
-        <button type={"submit"}>
+        <button
+          type={"submit"}
+          className={`bg-sky-200 text-3xl pb-2 pt-2 pr-5 pl-5 m-5 rounded-md hover:bg-sky-100`}
+        >
           Submit
         </button>
       </form>

@@ -14,7 +14,10 @@ function DeletePuppyButton(props: any) {
   }
 
   return (
-    <button onClick={handleClick}>
+    <button
+      onClick={handleClick}
+      className={`bg-red-400 hover:bg-red-300 w-almost-full mt-10 p-3 rounded-md`}
+    >
       Delete puppy
     </button>
   );

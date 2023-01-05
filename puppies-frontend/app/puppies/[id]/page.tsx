@@ -21,17 +21,17 @@ async function PuppyPage({params}) {
   const puppy = await getPuppy(params.id);
 
   return (
-    <div>
+    <div className={`flex flex-col items-center w-screen h-screen bg-stone-50`}>
       <Header/>
-      <p>Here you can find all the information about the puppy {puppy.name}.</p>
-      <ul>
+      <p className={`font-bold ml-5 mr-5 text-center`}>Here you can find all the information about {puppy.name}.</p>
+      <ul className={`p-4 mt-2 rounded-lg bg-stone-200 w-almost-full text-center`}>
         <li>ID: {puppy.id}</li>
         <li>NAME: {puppy.name}</li>
         <li>BREED: {puppy.breed}</li>
         <li>BIRTH DATE: {formatDateTime(puppy.birthDate)}</li>
       </ul>
-      <EditPuppyForm id={puppy.id} name={puppy.name} breed={puppy.breed} birthDate={puppy.birthDate}/>
-      <DeletePuppyButton id={puppy.id} />
+      <EditPuppyForm id={puppy.id} name={puppy.name} breed={puppy.breed} birthDate={formatDateTime(puppy.birthDate)}/>
+      <DeletePuppyButton id={puppy.id}/>
     </div>
   );
 }
