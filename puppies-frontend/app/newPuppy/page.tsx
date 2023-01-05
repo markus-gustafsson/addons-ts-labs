@@ -39,31 +39,35 @@ function NewPuppyPage() {
   }
 
   return (
-    <div>
+    <div className={`flex flex-col items-center w-screen h-screen bg-gray-800`}>
       <Header/>
-      <form onSubmit={handleSubmit} className={"article-form"} encType={'application/json'}>
+      <p className={`text-sky-100 text-xl font-bold`}>Enter details for new puppy below:</p>
+      <form onSubmit={handleSubmit} className={`flex flex-col items-center`} encType={'application/json'}>
         <input
           type="text"
           value={puppy.name}
           onChange={handleNameChange}
-          // className={"article-form__title-input"}
+          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md`}
           placeholder={"name..."}
         />
         <input
           type="text"
           value={puppy.breed}
           onChange={handleBreedChange}
-          // className={"article-form__title-input"}
+          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md`}
           placeholder={"breed..."}
         />
         <input
           type="text"
           value={puppy.birthDate}
           onChange={handleBirthDateChange}
-          // className={"article-form__title-input"}
+          className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md`}
           placeholder={"birth date e.g. 2022-01-01..."}
         />
-        <button type={"submit"}>
+        <button
+          type={"submit"}
+          className={`bg-sky-400 text-3xl pb-2 pt-2 pr-5 pl-5 rounded-xl hover:bg-sky-300`}
+        >
           Submit
         </button>
       </form>
