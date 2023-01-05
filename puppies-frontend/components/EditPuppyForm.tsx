@@ -46,7 +46,6 @@ function EditPuppyForm(props: IPuppyInfo) {
           value={puppy.name}
           onChange={handleNameChange}
           className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md bg-stone-100`}
-          // className={"article-form__title-input"}
           placeholder={puppy.name}
         />
         <input
@@ -54,8 +53,6 @@ function EditPuppyForm(props: IPuppyInfo) {
           value={puppy.breed}
           onChange={handleBreedChange}
           className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md rounded-md bg-stone-100`}
-
-          // className={"article-form__title-input"}
           placeholder={puppy.breed}
         />
         <input
@@ -63,8 +60,6 @@ function EditPuppyForm(props: IPuppyInfo) {
           value={puppy.birthDate}
           onChange={handleBirthDateChange}
           className={`w-almost-full text-2xl placeholder:text-2xl p-2 m-2 rounded-md rounded-md bg-stone-100`}
-
-          // className={"article-form__title-input"}
           placeholder={puppy.birthDate}
         />
         <button
