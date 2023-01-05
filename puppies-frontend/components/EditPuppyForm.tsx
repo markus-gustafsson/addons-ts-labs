@@ -38,32 +38,35 @@ function EditPuppyForm(props: IPuppyInfo) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={"article-form"} encType={'application/json'}>
-      <input
-        type="text"
-        value={puppy.name}
-        onChange={handleNameChange}
-        // className={"article-form__title-input"}
-        placeholder={puppy.name}
-      />
-      <input
-        type="text"
-        value={puppy.breed}
-        onChange={handleBreedChange}
-        // className={"article-form__title-input"}
-        placeholder={puppy.breed}
-      />
-      <input
-        type="text"
-        value={puppy.birthDate}
-        onChange={handleBirthDateChange}
-        // className={"article-form__title-input"}
-        placeholder={puppy.birthDate}
-      />
-      <button type={"submit"}>
-        Submit
-      </button>
-    </form>
+    <>
+      <p className={`mt-2`}>Something wrong? Edit the puppy here:</p>
+      <form onSubmit={handleSubmit} className={`border-2`} encType={'application/json'}>
+        <input
+          type="text"
+          value={puppy.name}
+          onChange={handleNameChange}
+          // className={"article-form__title-input"}
+          placeholder={puppy.name}
+        />
+        <input
+          type="text"
+          value={puppy.breed}
+          onChange={handleBreedChange}
+          // className={"article-form__title-input"}
+          placeholder={puppy.breed}
+        />
+        <input
+          type="text"
+          value={puppy.birthDate}
+          onChange={handleBirthDateChange}
+          // className={"article-form__title-input"}
+          placeholder={puppy.birthDate}
+        />
+        <button type={"submit"}>
+          Submit
+        </button>
+      </form>
+    </>
   );
 }
 

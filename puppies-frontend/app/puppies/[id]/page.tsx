@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from "../../../components/Header";
 import EditPuppyForm from "../../../components/EditPuppyForm";
+import DeletePuppyButton from "../../../components/DeletePuppyButton";
 
 async function getPuppy(id: number) {
   const response = await fetch(`http://localhost:8080/api/puppies/${id}`);
@@ -30,6 +31,7 @@ async function PuppyPage({params}) {
         <li>BIRTH DATE: {formatDateTime(puppy.birthDate)}</li>
       </ul>
       <EditPuppyForm id={puppy.id} name={puppy.name} breed={puppy.breed} birthDate={puppy.birthDate}/>
+      <DeletePuppyButton id={puppy.id} />
     </div>
   );
 }
